@@ -1,0 +1,81 @@
+[2026-02-12 21:08:14,239] INFO     | main.py     :44   | Running on node141.bme.utexas.edu [Linux 5.14.0-503.16.1.el9_5.x86_64]
+[2026-02-12 21:08:14,239] INFO     | main.py     :50   | Device: cuda:0
+[2026-02-12 21:08:14,240] INFO     | config.py   :102  | runtime config: 
+time_stamp: 20260212-210813
+supported_species2idx: {}
+supported_species: []
+exp_name: pred_modelinfo_datainfo
+save_path: /home/zh6674/project/cunh3/mp2energy/nnptutorial/predict
+remarks: prediction of what model on what data
+device: cuda:0
+predict:
+  model_ckpt: /home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/models/Checkpoint_Epoch277_3.58_20260212-181625.pt
+  csv_path: /home/zh6674/project/cunh3/mp2energy/nnptutorial/energy.csv
+  label_column: label_e
+  pred_column: PRED_E_covalent
+  loading_workers: 8
+  batch_size: 500
+  dataset_name: Metal
+  h5_files:
+  - /home/zh6674/project/cunh3/mp2energy/nnptutorial/data.h5
+  h5_multipole: ''
+save_folder: pred_modelinfo_datainfo_20260212-210813
+
+[2026-02-12 21:08:14,241] INFO     | config.py   :105  | -------------------- config saved to /home/zh6674/project/cunh3/mp2energy/nnptutorial/predict/pred_modelinfo_datainfo_20260212-210813/config.yaml --------------------
+[2026-02-12 21:08:14,249] INFO     | predictor.py:23   | prediction initializing...
+[2026-02-12 21:08:14,401] INFO     | predictor.py:60   | Size of data: 10000
+[2026-02-12 21:08:14,402] INFO     | predictor.py:75   | loading model configuration from /home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/config.yaml
+[2026-02-12 21:08:14,406] INFO     | predictor.py:80   | updated config: time_stamp: 20260212-210813
+supported_species2idx:
+  O: 0
+  N: 1
+  Cu: 2
+supported_species:
+- O
+- N
+- Cu
+exp_name: pred_modelinfo_datainfo
+save_path: /home/zh6674/project/cunh3/mp2energy/nnptutorial/predict
+remarks: prediction of what model on what data
+device: cuda:0
+predict:
+  model_ckpt: /home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/models/Checkpoint_Epoch277_3.58_20260212-181625.pt
+  csv_path: /home/zh6674/project/cunh3/mp2energy/nnptutorial/energy.csv
+  label_column: label_e
+  pred_column: PRED_E_covalent
+  loading_workers: 8
+  batch_size: 500
+  dataset_name: Metal
+  h5_files:
+  - /home/zh6674/project/cunh3/mp2energy/nnptutorial/data.h5
+  h5_multipole: ''
+save_folder: pred_modelinfo_datainfo_20260212-210813
+model:
+  MLP_dhiddens:
+  - 128
+  - 64
+  - 32
+  arch: ANINetwork_Metal
+  enable_bias: false
+  metal: Cu
+  pretrained_model: ''
+aev:
+  angle_sections: 10
+  angular_cutoff: 3.5
+  angular_dist_divisions: 8
+  angular_eta: 8
+  angular_start: 0.9
+  radial_cutoff: 3.5
+  radial_dist_divisions: 16
+  radial_eta: 16.0
+  radial_start: 0.9
+  zeta: 32
+
+[2026-02-12 21:08:15,533] INFO     | predictor.py:84   | prediction started...
+[2026-02-12 21:08:16,303] INFO     | mlp.py      :264  | [ 0 / 20 ] batches completed.
+[2026-02-12 21:08:16,511] INFO     | predictor.py:88   | RMSE: 1.00719007365548
+[2026-02-12 21:08:16,579] INFO     | predictor.py:89   | R_Pearson: 0.9955387936178807
+[2026-02-12 21:08:16,581] INFO     | predictor.py:90   | R_Spearman: 0.9482386257586098
+[2026-02-12 21:08:16,581] INFO     | predictor.py:91   | R_squared: 0.9883752302581083
+[2026-02-12 21:08:16,645] INFO     | predictor.py:99   | prediction finished.
+[2026-02-12 21:08:16,646] INFO     | main.py     :68   | program ended. total time eclipsed: 2.4103517532348633
