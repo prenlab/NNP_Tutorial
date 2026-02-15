@@ -6,12 +6,13 @@ device: 'cuda:0'  # make it consistent throughout all codes. gpu index or cuda/c
 
 predict:
   model_ckpt: '/home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/models/Checkpoint_Epoch277_3.58_20260212-181625.pt'
-  csv_path: '/home/zh6674/project/cunh3/mp2energy/nnptutorial/energy.csv'
+  csv_path: 'NNP_Tutorial/data/energy.csv'
   label_column: 'label_e'
-  pred_column: 'PRED_E_covalent'
-  loading_workers: 8
-  batch_size: 500
+  pred_column: 'PRED_e'
+  loading_workers: 2
+  batch_size: 1000
   dataset_name: "Metal"
-  h5_files: ['/home/zh6674/project/cunh3/mp2energy/nnptutorial/data.h5'
+  h5_files: [
+    'NNP_Tutorial/data/data.h5'
   ]  # store xyz data
   h5_multipole: ""

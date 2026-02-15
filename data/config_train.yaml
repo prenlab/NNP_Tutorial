@@ -1,22 +1,22 @@
 exp_name: 'test'
-save_path: '/home/zh6674/project/cunh3/mp2energy/nnptutorial'
+save_path: 'results'  # path to save trained models, logs, etc.
 remarks: "test remarks"
-device: 'cuda:0'  # make it consistent throughout all codes. gpu index or cuda/cpu
+device: 'cuda'  # make it consistent throughout all codes. gpu index or cuda/cpu
 # backup: ['code', 'config']  # not yet implemented
 
 train:  # params used only and exclusively during training
   dataset_name: "Metal"  # SPICE, ANI1
   use_pkl: ""
-  csv_path: '/home/zh6674/project/cunh3/mp2energy/nnptutorial/energy.csv'
+  csv_path: 'NNP_Tutorial/data/energy.csv'
   label_column: 'label_e'
   relative_training: false
   split:
     column: 'division'
-    train: [0,1,2,3,4,5,6,7,8,9] 
-    num_folds: 5  # evenly split the SPLIT ID in `train` and then apply cross val.
+    train: [0,1,2,3,4,5,6,7]
+    val: [8,9]
     test: []
-  loading_workers: 8
-  batch_size: 500
+  loading_workers: 2
+  batch_size: 1000
   loss_fn: "MSE"
   loss_force_weight: 0.2 # 0 means turned off
   loss_fn_force: "CosMag"  # "CartMSE" or "CosMag"
@@ -28,13 +28,13 @@ train:  # params used only and exclusively during training
   lr_factor: 0.8
   lr_threshold: 0.001
   lr_threshold_mode: 'abs'
-  num_epochs: 800
+  num_epochs: 300
   h5_files: [
-    '/home/zh6674/project/cunh3/mp2energy/nnptutorial/data.h5'
+    'NNP_Tutorial/data/data.h5'
   ]  # store xyz data
-  h5_force: "/home/zh6674/project/cunh3/mp2energy/nnptutorial/force_target.h5"  # labels for forces
+  h5_force: "NNP_Tutorial/data/force_target.h5"  # labels for forces
   h5_multipole: ""
-  speedup: true  # speedup data loading
+  speedup: false  # speedup data loading
 test:  # placeholder for external test set used in training in the future
   csv_path: '/fakepath'
 

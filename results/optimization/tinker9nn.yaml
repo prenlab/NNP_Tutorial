@@ -1,8 +1,0 @@
-nn_model: "/home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/models/Checkpoint_Epoch277_3.58_20260212-181625.pt"
-device: "cuda"  # cuda device
-is_bonded: False # whether the nnp are bonded
-# atoms to compute nn energy of
-# start from 1
-nn_atoms: [
-]
-
