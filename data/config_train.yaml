@@ -34,7 +34,7 @@ train:  # params used only and exclusively during training
   ]  # store xyz data
   h5_force: "NNP_Tutorial/data/force_target.h5"  # labels for forces
   h5_multipole: ""
-  speedup: false  # speedup data loading
+  speedup: true  # speedup data loading
 test:  # placeholder for external test set used in training in the future
   csv_path: '/fakepath'
 

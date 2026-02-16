@@ -1,11 +1,11 @@
 exp_name: 'pred_modelinfo_datainfo'
-save_path: '/home/zh6674/project/cunh3/mp2energy/nnptutorial/predict'
+save_path: 'results'
 remarks: "prediction of what model on what data"
-device: 'cuda:0'  # make it consistent throughout all codes. gpu index or cuda/cpu
+device: 'cuda'  # make it consistent throughout all codes. gpu index or cuda/cpu
 # backup: ['code', 'config']  # not yet implemented
 
 predict:
-  model_ckpt: '/home/zh6674/project/cunh3/mp2energy/nnptutorial/test_20260212-175944/fold_4/models/Checkpoint_Epoch277_3.58_20260212-181625.pt'
+  model_ckpt: 'NNP_Tutorial/results/demo_run/Checkpoint_Epoch277_3.58_20260212-181625.pt'
   csv_path: 'NNP_Tutorial/data/energy.csv'
   label_column: 'label_e'
   pred_column: 'PRED_e'
